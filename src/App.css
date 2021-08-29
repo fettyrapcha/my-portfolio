@@ -3,8 +3,8 @@
 :root{
   --primary-write: #fff;
   --primary-blue: #34ebd2;
-  --primary-orange: #eb9f34;
-  --primary-dark: rgba(255, 255,255, 0);
+  --primary-orange: #c78305;
+  --primary-dark: rgba(255, 255, 255, 0);
 }
 body{
   font-family: "Roboto Condesed" sans-serif;
@@ -12,10 +12,16 @@ body{
 
 /****************************** NavBar ***************************************/
 .logo{
-  width: 12.25rem;
+  padding-top: 10px;
+  width: 10.25rem;
 }
 
 /*...Menu links..*/
+nav{
+  z-index: 2;
+  
+}
+
 nav a.nav-link{
   letter-spacing: 0.6px;
   cursor: pointer;
@@ -32,19 +38,90 @@ nav ul li{
 .navbar-nav > li > a {
   margin-right: 12px;
   margin-left: 12px;
+  font-size: 12px;
   color: var(--primary-write) !important;
   border-bottom: 0.1875rem solid var(--primary-dark);
 }
 
 .navbar-brand{
   width: 13.25rem;
-  padding:  0;
+  padding: 0;
   height: 5rem;
 }
 
 .navbar-nav > li > a.active, .navbar-nav > li > a.active:focus{
-  border-bottom: 0.1875rem solid var(--primary-blue);
+  border-bottom: 0.1875rem solid var(--primary-orange);
 }
 .navbar-nav > li > a:hover{
-  border-bottom: 0.1875rem solid var(--primary-blue); 
+  border-bottom: 0.1875rem solid var(--primary-orange); 
+}
+
+/****************************** Header ***************************************/
+.header-wraper{
+  position: relative;
+  background: url(walll.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.main-info{
+  display: flex;
+  position: absolute;
+  top: 0;bottom: 0;right: 0;left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-info h2{
+  color: var(--primary-orange);
+  text-transform: uppercase;
+}
+
+/*...Typed Text...*/
+.typed-text{
+  font-size: 1.4rem;
+  color: var(--primary-write);
+}
+
+/*....Main offer...*/
+.btn-main-offer{
+  border: 2px solid var(--primary-orange);
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 5px 6px 5px 6px;
+  color: grey;
+  margin: 2rem;
+  text-decoration: none;
+  z-index: 1;
+}
+.btn-main-offer:hover{
+  background-color: var(--primary-orange);
+  text-decoration: none;
+  transition: .2s ease-in-out;
+  color: var(--primary-write);
+}
+
+/****************************** Particles ***************************************/
+.tsparticles-canvas-el{
+  position: absolute;
+  height: 100vh;
+  width: 100vh;
+  z-index: 1;
+}
+
+@media (max-width: 768px ){
+  .particles-canvas{
+    display: none;}
+  .typed-text{
+    font-size: 1.3rem !important;
+  }
+  .main-info h2{
+    font-size: 1.5rem !important;
+  }
+  .navbar-brand{
+    width: 7rem;
+  }
 }
