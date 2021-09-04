@@ -1,18 +1,28 @@
+
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Particles from 'react-particles-js';
-import Navbar from './components/Navbar';
 import Header from './components/Header';
+import About from './components/About';
+import Resume from './components/Resume';
+import Services from './components/Services';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import Navigation from './components/Navigation';
+
+
+
 
 function App() {
   return (
     <>
+    
       <Particles
         className="particles-canvas"
         params={{
           particles: {
             number: {
-              value: 30,
+              value: 50,
               density: {
                 enable: true,
                 value_area: 900,
@@ -27,9 +37,15 @@ function App() {
             }
           },
         }}
-      />
-      <Navbar />
-      <Header />
+        />
+        <Navigation />
+        <Header  />
+        <About  />
+        <Resume  />
+        <Services  />
+        <Portfolio  />
+        <Contact />
+        
     </>
   );
 }
