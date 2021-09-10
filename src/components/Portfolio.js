@@ -1,8 +1,7 @@
 import React from 'react';
 import webdev from "../images/webdev.jpeg";
 import auto from "../images/auto.JPG";
-import data from "../images/Data.JPG"
-import banner from "../images/banner.jpg";
+import data from "../images/Data.JPG";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink} from '@fortawesome/free-solid-svg-icons';
 

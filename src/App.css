@@ -779,7 +779,7 @@ img {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form .send-button[type="submit"] {
   background: var(--primary-orange);
   margin: 8px;
   border: 0;
@@ -789,7 +789,7 @@ img {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form .send-button[type="submit"]:hover {
   background: #5c4505;
 }
 

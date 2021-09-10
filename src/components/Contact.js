@@ -1,4 +1,5 @@
 import React from 'react';
+import emailjs from "emailjs-com";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope ,faMap, faPhoneAlt, faShareAlt, } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +8,22 @@ import {fab, faFacebook, faInstagram, faLinkedin, faTwitter} from '@fortawesome/
 library.add(fab, faTwitter, faFacebook, faInstagram, faLinkedin)
 
 const Contact = () => {
+     
+    function sendEmail(e) {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_ka0jm6w',
+        'template_8046q4a',
+        e.target,
+        "user_uXFueVKw2sgVZzDxym3FE")
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      }
+
+
     return (
         <div id="section6">
             <section id="contact" className="contact">
@@ -57,7 +74,7 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <form action="forms/contact.php" method="post" role="form" className="php-email-form mt-4">
+                    {/* <form  role="form" className="php-email-form mt-4" onSelect={sendEmail}>
                         <div className="row">
                             <div className="col-md-6 form-group">
                                 <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" required></input>
@@ -72,13 +89,34 @@ const Contact = () => {
                             <div className="form-group mt-3">
                                 <textarea className="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                             </div>
-                            {/* <div className="my-3">
-                                <div className="loading">Loading</div>
-                                <div className="error-message"></div>
-                                <div className="sent-message">Your message has been sent. Thank you!</div>
-                            </div> */}
+            
                         <div className="text-center"><button type="submit">Send Message</button></div>
+                    </form> */}
+
+                    <form className="contact-form" className="php-email-form mt-4" onSubmit={sendEmail}>
+                    <div className="row">
+                        <input type="hidden" name="contact_number" />
+                        
+                        <div className="col-md-6 form-group">
+                            <input type="text" className="form-control" name="name"  placeholder="Your Name" required></input>
+                        </div>
+
+                        <div className="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" className="form-control" name="email"  placeholder="Your Email" required></input>
+                        </div>
+                        
+                    </div>
+                    <div className="form-group mt-3">
+                        <input type="text" className="form-control" name="subject" placeholder="Subject" required></input>
+                    </div>
+                    <div className="form-group mt-3">
+                        <textarea className="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div className="text-center"><input className="send-button" type="submit" value="Send" /></div>   
+                        
                     </form>
+  
+
 
                 </div>
             </section> 

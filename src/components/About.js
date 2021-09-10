@@ -1,7 +1,7 @@
 import React from 'react';
 import mylogo from "../images/myimage.jpg";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import PureCounter from '@srexi/purecounterjs';
+
 
 
 

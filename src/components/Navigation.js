@@ -9,7 +9,7 @@ const Navigation = () => {
     return (
         <>
             <Navbar bg="dark" expand="lg" sticky="top">
-                <Navbar.Brand  href="#"><img  className="logo" src={logo} alt="logo..." /></Navbar.Brand>
+                <Navbar.Brand style={{paddingLeft: "30px"}} href="#"><img  className="logo" src={logo} alt="logo..." /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" >
                     <FontAwesomeIcon icon={faBars} style={{color: "#bec1c4"}}/>
                 </Navbar.Toggle>
@@ -20,7 +20,7 @@ const Navigation = () => {
                     navbarScroll
                     >
                     {/* <div className="collapse navbar-collapse" id="navbarSupportedContent"> */}
-                        <ul className="navbar-nav">
+                        <ul className="navbar-nav" style={{paddingRight: "30px"}}>
                             <li className="nav-item active">
                                
                                 <Link className="nav-link" activeClass="active" to="section1" spy={true} smooth={false} offset={-100} duration={500}>Home</Link>
